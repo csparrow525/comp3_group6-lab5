@@ -31,7 +31,7 @@
 *.out
 *.app
 
-# Khang Vu - All the background files (i.e. everything except for the lab5.cpp and .gitignore)
-/.vs
-/lab5/out
-*.json
+# Khang Vu - Everything except for the lab5.cpp and .gitignore
+*
+!.gitignore
+!lab5.cpp
