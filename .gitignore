@@ -31,7 +31,7 @@
 *.out
 *.app
 
-# Khang Vu - Everything except for the lab5.cpp and .gitignore
-*
-!.gitignore
+# Khang Vu - Everything except for the lab5.cpp, .gitignore, and Charlie's very cool README.md file
+/.vs
+/lab5
 !lab5.cpp
