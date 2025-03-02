@@ -21,10 +21,10 @@ public:
     friend ostream& operator<<(ostream& outstream, const ComplexNumber& obj);
 
     // Alex Ly - Overloaded Math Functions Below - Friend non-Members
-    friend ComplexNumber operator+(const  ComplexNumber c1, const  ComplexNumber c2);
-    friend ComplexNumber operator-(const  ComplexNumber c1, const  ComplexNumber c2);
-    friend ComplexNumber operator*(const  ComplexNumber c1, const  ComplexNumber c2);
-    friend ComplexNumber operator/(const  ComplexNumber c1, const  ComplexNumber c2);
+    friend ComplexNumber operator+(const  ComplexNumber &c1, const  ComplexNumber &c2);
+    friend ComplexNumber operator-(const  ComplexNumber &c1, const  ComplexNumber &c2);
+    friend ComplexNumber operator*(const  ComplexNumber &c1, const  ComplexNumber &c2);
+    friend ComplexNumber operator/(const  ComplexNumber &c1, const  ComplexNumber &c2);
 
 
 private:
@@ -46,26 +46,40 @@ ostream& operator<<(ostream& outstream, const ComplexNumber& obj) {
 }
 
 // Alex Ly - Logic for mathematical functions for imaginary numbers -> source: https://en.wikipedia.org/wiki/Complex_number#Addition_and_subtraction
-ComplexNumber operator+(const  ComplexNumber c1, const  ComplexNumber c2) {
+
+// Addition Operator
+ComplexNumber operator+(const  ComplexNumber &c1, const  ComplexNumber &c2) {
+    return ComplexNumber(c1.real + c2.real, c1.imaginary + c2.imaginary);
+}
+
+// Subtraction Operator
+ComplexNumber operator-(const  ComplexNumber &c1, const  ComplexNumber &c2) {
+
+    return ComplexNumber(c1.real - c2.real, c1.imaginary - c2.imaginary);
+}
+
+// Multiplication Operator
+// (a + bi) * (c+di) = ac - bd + (ad + bc)i
+ComplexNumber operator*(const  ComplexNumber &c1, const  ComplexNumber &c2) {
+    //                     real portion below                                   imaginary portion below (because it is multiplied by i)
+    //                        a         c            b               d              a          d              b              c
+    return ComplexNumber((c1.real * c2.real) - (c1.imaginary * c2.imaginary), ((c1.real * c2.imaginary) + (c1.imaginary * c2.real)));
+}
+
+// Division Operator
+// ((ux + vy) / (x*x + y*y))    +    ((vx - uy) / (x*x + y*y))i  denominator rationalization
+ComplexNumber operator/(const  ComplexNumber &c1, const  ComplexNumber &c2) {
+
+    //((ux + vy) / (x * x + y * y)
+    return ComplexNumber(
+
+//      real portion
+//      u           x           v               y               x          x           y                y                                                                          
+    (((c1.real * c2.real) + (c1.imaginary * c2.imaginary)) / ((c2.real * c2.real) + (c2.imaginary * c2.imaginary))),    
+
+//      imaginary portion
+//              v           x           u           y               x       x           y                   y
+    (((c1.imaginary * c2.real) - (c1.real * c2.imaginary)) / ((c2.real * c2.real) + (c2.imaginary * c2.imaginary)))
     
-    //add the real parts
-
-    //add the imaginary parts
-
-    //put them together into a new complex number
-    ComplexNumber newComplex = c1 + c2;
-
-    return newComplex;
-}
-ComplexNumber operator-(const  ComplexNumber c1, const  ComplexNumber c2) {
-
-    return c1;
-}
-ComplexNumber operator*(const  ComplexNumber c1, const  ComplexNumber c2) {
-
-    return c1;
-}
-ComplexNumber operator/(const  ComplexNumber c1, const  ComplexNumber c2) {
-
-    return c1;
+    );
 }
