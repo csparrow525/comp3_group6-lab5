@@ -20,6 +20,12 @@ public:
     // Khang Vu - Overloaded << - Friend non-Member
     friend ostream& operator<<(ostream& outstream, const ComplexNumber& obj);
 
+    // Alex Ly - Overloaded Math Functions Below - Friend non-Members
+    friend ComplexNumber operator+(const  ComplexNumber real, const  ComplexNumber imaginary);
+    friend ComplexNumber operator-(const  ComplexNumber real, const  ComplexNumber imaginary);
+    friend ComplexNumber operator*(const  ComplexNumber real, const  ComplexNumber imaginary);
+    friend ComplexNumber operator/(const  ComplexNumber real, const  ComplexNumber imaginary);
+
 
 private:
     double real;
@@ -37,4 +43,21 @@ int main() {
 ostream& operator<<(ostream& outstream, const ComplexNumber& obj) {
     outstream << obj.real << "+" << obj.imaginary << "i";
     return outstream;
+}
+
+ComplexNumber operator+(const  ComplexNumber real, const  ComplexNumber imaginary) {
+
+    return real;
+}
+ComplexNumber operator-(const  ComplexNumber real, const  ComplexNumber imaginary) {
+
+    return real;
+}
+ComplexNumber operator*(const  ComplexNumber real, const  ComplexNumber imaginary) {
+
+    return real;
+}
+ComplexNumber operator/(const  ComplexNumber real, const  ComplexNumber imaginary) {
+
+    return real;
 }
