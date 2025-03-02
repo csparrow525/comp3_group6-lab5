@@ -30,3 +30,6 @@
 *.exe
 *.out
 *.app
+
+# Khang Vu - whatever the hell Visual Studio has
+*.vs
