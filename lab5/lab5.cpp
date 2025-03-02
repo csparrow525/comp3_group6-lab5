@@ -21,10 +21,10 @@ public:
     friend ostream& operator<<(ostream& outstream, const ComplexNumber& obj);
 
     // Alex Ly - Overloaded Math Functions Below - Friend non-Members
-    friend ComplexNumber operator+(const  ComplexNumber real, const  ComplexNumber imaginary);
-    friend ComplexNumber operator-(const  ComplexNumber real, const  ComplexNumber imaginary);
-    friend ComplexNumber operator*(const  ComplexNumber real, const  ComplexNumber imaginary);
-    friend ComplexNumber operator/(const  ComplexNumber real, const  ComplexNumber imaginary);
+    friend ComplexNumber operator+(const  ComplexNumber c1, const  ComplexNumber c2);
+    friend ComplexNumber operator-(const  ComplexNumber c1, const  ComplexNumber c2);
+    friend ComplexNumber operator*(const  ComplexNumber c1, const  ComplexNumber c2);
+    friend ComplexNumber operator/(const  ComplexNumber c1, const  ComplexNumber c2);
 
 
 private:
@@ -45,19 +45,27 @@ ostream& operator<<(ostream& outstream, const ComplexNumber& obj) {
     return outstream;
 }
 
-ComplexNumber operator+(const  ComplexNumber real, const  ComplexNumber imaginary) {
+// Alex Ly - Logic for mathematical functions for imaginary numbers -> source: https://en.wikipedia.org/wiki/Complex_number#Addition_and_subtraction
+ComplexNumber operator+(const  ComplexNumber c1, const  ComplexNumber c2) {
+    
+    //add the real parts
 
-    return real;
+    //add the imaginary parts
+
+    //put them together into a new complex number
+    ComplexNumber newComplex = c1 + c2;
+
+    return newComplex;
 }
-ComplexNumber operator-(const  ComplexNumber real, const  ComplexNumber imaginary) {
+ComplexNumber operator-(const  ComplexNumber c1, const  ComplexNumber c2) {
 
-    return real;
+    return c1;
 }
-ComplexNumber operator*(const  ComplexNumber real, const  ComplexNumber imaginary) {
+ComplexNumber operator*(const  ComplexNumber c1, const  ComplexNumber c2) {
 
-    return real;
+    return c1;
 }
-ComplexNumber operator/(const  ComplexNumber real, const  ComplexNumber imaginary) {
+ComplexNumber operator/(const  ComplexNumber c1, const  ComplexNumber c2) {
 
-    return real;
+    return c1;
 }
