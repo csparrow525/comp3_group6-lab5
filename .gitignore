@@ -31,5 +31,7 @@
 *.out
 *.app
 
-# Khang Vu - whatever the hell Visual Studio has
-*.vs
+# Khang Vu - All the background files (i.e. everything except for the lab5.cpp and .gitignore)
+/.vs
+/lab5/out
+*.json
