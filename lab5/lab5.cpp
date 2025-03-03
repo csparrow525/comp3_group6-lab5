@@ -1,3 +1,16 @@
+/* 
+
+Reflector     Manager     Scribe       Recorder
+
+GROUP 6:
+    CHARLIE SPARROW - 
+
+    ALEX LY - Wrote the Overloaded + - * / functions.
+
+    KHANG VU - Wrote Constructors, Mutators, Accessors, and overloaded extraction operator
+
+    HECTOR VAZQUEZ - 
+*/
 #include <iostream>
 #include <vector>
 using namespace std;
