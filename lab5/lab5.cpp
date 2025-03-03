@@ -3,7 +3,7 @@
 Reflector     Manager     Scribe       Recorder
 
 GROUP 6:
-    CHARLIE SPARROW - 
+    CHARLIE SPARROW - Wrote the driver in main and created repository
 
     ALEX LY - Wrote the Overloaded + - * / functions.
 
@@ -46,8 +46,45 @@ private:
 };
 
 int main() {
-    //writing the driver here - Charlie Sparrow
-    cout << "Hello, world!" << endl;
+    //Complex number objects created with default constructor as well as constructor that take two ints
+    //the first for the real number and second for imaginary
+    ComplexNumber c1;
+    ComplexNumber c2(1,2);
+    ComplexNumber c3(3,4);
+
+    //outputs
+    cout << "Value of c1 (default constructor): " << endl;
+    cout << "c1.Re() == " << c1.Re() << ", c1.Im() == " << c1.Im() << endl;
+    cout << "Value of c2 (value constructor): " << endl;
+    cout << "c2.Re() == " << c2.Re() << ", c2.Im() == " << c2.Im() << endl;
+
+    cout << "\nc2 + c3 (" << c2 << " + " << c3 << ") == " << c2 + c3 <<  endl;
+    cout << "c2 - c3 (" << c2 << " - " << c3 << ") == " << c2 - c3 <<  endl;
+    cout << "c2 * c3 (" << c2 << " * " << c3 << ") == " << c2 * c3 <<  endl;
+    cout << "c2 / c3 (" << c2 << " / " << c3 << ") == " << c2 / c3 <<  endl;
+    cout << "(c2/c3) + (c2*c3) == " <<  (c2/c3) + (c2*c3) <<  endl;
+    //need hector to write the overload the ! operator before i can add this part
+    //cout << "c2 is currently " << c2 << "; !c2 (complex conjugate of c2) == " << !c2 << endl;
+
+    //outputs vector of ComplexNumbers using for loop
+    vector<ComplexNumber> v;
+    cout << "\nVector output using indexed for-loop:" << endl;
+    for (int i = 0; i < 10; i++) {
+        ComplexNumber c(i, i*2);
+        v.push_back(c);
+    }
+    for (int i = 0; i < v.size(); i++) {
+        cout << v[i] << endl;
+    }
+
+    //outputs vector of complex numbers using iterator inside a for loop
+    cout << "\nVector output using an iterator in for loop:" << endl;
+    vector<ComplexNumber>::iterator it;
+    for (it = v.begin(); it != v.end(); ++it) {
+        cout << *it << endl;
+    }
+
+
     return 0;
 }
 
