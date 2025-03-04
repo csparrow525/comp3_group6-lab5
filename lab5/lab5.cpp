@@ -9,7 +9,7 @@ GROUP 6:
 
     KHANG VU - Wrote Constructors, Mutators, Accessors, and overloaded extraction operator
 
-    HECTOR VAZQUEZ - 
+    HECTOR VAZQUEZ -  Wrote overloaded ! function.
 */
 #include <iostream>
 #include <vector>
@@ -39,6 +39,8 @@ public:
     friend ComplexNumber operator*(const  ComplexNumber &c1, const  ComplexNumber &c2);
     friend ComplexNumber operator/(const  ComplexNumber &c1, const  ComplexNumber &c2);
 
+    //Hector Vazquez - Overloaded ! operator
+    friend ComplexNumber operator!(const  ComplexNumber& c1);
 
 private:
     double real;
@@ -64,7 +66,7 @@ int main() {
     cout << "c2 / c3 (" << c2 << " / " << c3 << ") == " << c2 / c3 <<  endl;
     cout << "(c2/c3) + (c2*c3) == " <<  (c2/c3) + (c2*c3) <<  endl;
     //need hector to write the overload the ! operator before i can add this part
-    //cout << "c2 is currently " << c2 << "; !c2 (complex conjugate of c2) == " << !c2 << endl;
+    cout << "c2 is currently " << c2 << "; !c2 (complex conjugate of c2) == " << !c2 << endl;
 
     //outputs vector of ComplexNumbers using for loop
     vector<ComplexNumber> v;
@@ -132,4 +134,9 @@ ComplexNumber operator/(const  ComplexNumber &c1, const  ComplexNumber &c2) {
     (((c1.imaginary * c2.real) - (c1.real * c2.imaginary)) / ((c2.real * c2.real) + (c2.imaginary * c2.imaginary)))
     
     );
+}
+
+//Hector Vazquez - Logic for overloaded ! operator
+ComplexNumber operator!(const ComplexNumber& c1) {
+    return ComplexNumber(c1.real, -(c1.imaginary));
 }
