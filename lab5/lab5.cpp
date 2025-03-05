@@ -93,7 +93,9 @@ int main() {
 // FUNCTION DEFINITIONS
 // KV - Overloaded <<
 ostream& operator<<(ostream& outstream, const ComplexNumber& obj) {
-    outstream << obj.real << "+" << obj.imaginary << "i";
+    outstream << obj.real;
+    if (obj.imaginary >= 0) outstream << "+";
+    outstream << obj.imaginary << "i";
     return outstream;
 }
 
