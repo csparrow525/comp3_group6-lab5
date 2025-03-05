@@ -1,6 +1,9 @@
 /* 
 
-Reflector     Manager     Scribe       Recorder
+Reflector - Alex
+Manager - Charlie
+Scribe - Hector
+Recorder - Khang
 
 GROUP 6:
     CHARLIE SPARROW - Wrote the driver in main and created repository
